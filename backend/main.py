@@ -15,8 +15,8 @@ from pydantic import BaseModel
 APP_DIR = Path(__file__).resolve().parent
 load_dotenv(APP_DIR / ".env")
 KNOWLEDGE_PATH = APP_DIR / "knowledge_base" / "hollowfall.txt"
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "llama3.2:3b"
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:3b")
 CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION", "hollowfall_knowledge")
 EMBEDDING_SIZE = 384
 
