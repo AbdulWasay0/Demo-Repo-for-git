@@ -13,6 +13,8 @@ const STARTER_MESSAGES: Message[] = [
   },
 ];
 
+const CHATBOT_API_URL = import.meta.env.VITE_CHATBOT_API_URL || "http://localhost:8000";
+
 export function ChatbotWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>(STARTER_MESSAGES);
@@ -29,7 +31,7 @@ export function ChatbotWidget() {
     setMessages((current) => [...current, { role: "user", text: question }]);
 
     try {
-      const response = await fetch("http://localhost:8000/chat", {
+      const response = await fetch(`${CHATBOT_API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: question }),
