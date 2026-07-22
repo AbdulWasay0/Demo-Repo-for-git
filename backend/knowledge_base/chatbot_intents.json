@@ -1,10 +1,10 @@
 {
   "greeting": {
-    "patterns": ["hi", "hello", "helo", "helllo", "hey", "heyy", "yo", "hiya", "good morning", "good afternoon", "good evening", "what's up", "whats up", "sup"],
+    "patterns": ["hi", "hello", "hey", "heyy", "yo", "hiya", "good morning", "good afternoon", "good evening", "what's up", "whats up", "sup"],
     "response": "Hey! Ask me anything about Hollow Fall: story, characters, enemies, release, platforms, or support."
   },
   "wellbeing": {
-    "patterns": ["how are you", "how aare you", "how are u", "how r you", "how are you doing", "how is it going", "how's it going", "are you okay", "you good"],
+    "patterns": ["how are you", "how are u", "how r you", "how are you doing", "how is it going", "how's it going", "are you okay", "you good"],
     "response": "I'm ready to help. Ask me anything about Hollow Fall."
   },
   "acknowledgement": {

@@ -108,12 +108,31 @@ def get_chroma_collection():
 
 def score_chunk(question: str, chunk: str) -> int:
     question_words = {
-        word.strip(".,?!:;()[]\"'").lower()
-        for word in question.split()
-        if len(word.strip(".,?!:;()[]\"'")) > 2
+        word
+        for word in re.findall(r"[a-z0-9]+", question.lower())
+        if len(word) > 2
     }
-    chunk_lower = chunk.lower()
-    return sum(1 for word in question_words if word in chunk_lower)
+    chunk_words = {
+        word
+        for word in re.findall(r"[a-z0-9]+", chunk.lower())
+        if len(word) > 2
+    }
+    score = 0
+    for question_word in question_words:
+        if question_word in chunk_words:
+            score += 2
+            continue
+        if any(words_are_close(question_word, chunk_word) for chunk_word in chunk_words):
+            score += 1
+    return score
+
+
+def words_are_close(left: str, right: str) -> bool:
+    if abs(len(left) - len(right)) > 2:
+        return False
+    if len(left) < 4 or len(right) < 4:
+        return False
+    return SequenceMatcher(None, left, right).ratio() >= 0.82
 
 
 def retrieve_context(question: str, limit: int = 4) -> str:
