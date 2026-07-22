@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "npm --prefix \"Hollow Fall\" run build",
+    "build": "npm --prefix \"Hollow Fall\" run build && node scripts/copy-vercel-output.mjs",
     "dev": "npm --prefix \"Hollow Fall\" run dev",
     "preview": "npm --prefix \"Hollow Fall\" run preview"
   }
