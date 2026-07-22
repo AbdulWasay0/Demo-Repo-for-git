@@ -1,22 +1,54 @@
 {
   "greeting": {
-    "patterns": ["hi", "hello", "hey", "good morning", "good afternoon", "good evening", "what's up", "whats up"],
+    "patterns": ["hi", "hello", "hey", "heyy", "yo", "hiya", "good morning", "good afternoon", "good evening", "what's up", "whats up", "sup"],
     "response": "Hey! Ask me anything about Hollow Fall: story, characters, enemies, release, platforms, or support."
   },
+  "wellbeing": {
+    "patterns": ["how are you", "how are you doing", "how is it going", "how's it going", "are you okay", "you good"],
+    "response": "I'm ready to help. Ask me anything about Hollow Fall."
+  },
+  "acknowledgement": {
+    "patterns": ["ok", "okay", "alright", "fine", "got it", "i got it", "understood", "makes sense", "hmm", "ah", "oh", "oh okay"],
+    "response": "Got it. Ask me another Hollow Fall question whenever you're ready."
+  },
+  "positive_reaction": {
+    "patterns": ["nice", "oh nice", "cool", "great", "awesome", "amazing", "good", "very good", "sounds good", "that's good", "thats good", "i like it", "love it"],
+    "response": "Glad you like it. I can tell you more about the story, characters, enemies, features, or release details."
+  },
+  "negative_reaction": {
+    "patterns": ["bad", "not good", "i don't like it", "i dont like it", "boring", "that's bad", "thats bad", "not nice"],
+    "response": "Fair enough. You can ask about another part of Hollow Fall, like gameplay, enemies, story, or platforms."
+  },
   "thanks": {
-    "patterns": ["thanks", "thank you", "thx", "appreciate it"],
+    "patterns": ["thanks", "thank you", "thx", "appreciate it", "thanks bro", "thank you bro", "ty"],
     "response": "You're welcome. I can help with more Hollow Fall details whenever you want."
   },
+  "apology": {
+    "patterns": ["sorry", "my bad", "oops", "sorry about that"],
+    "response": "No problem. Ask me anything about Hollow Fall."
+  },
   "goodbye": {
-    "patterns": ["bye", "goodbye", "see you", "talk to you later"],
+    "patterns": ["bye", "goodbye", "see you", "see ya", "talk to you later", "later", "gtg"],
     "response": "Goodbye. Stay safe in Hollow Fall."
   },
   "identity": {
-    "patterns": ["who are you", "what are you", "your name", "what is your name"],
+    "patterns": ["who are you", "what are you", "your name", "what is your name", "who am i talking to", "are you a bot"],
     "response": "I'm the Hollow Fall assistant. I answer from the official Hollow Fall knowledge base."
   },
+  "creator": {
+    "patterns": ["who made you", "who created you", "who built you", "your creator", "your developer", "who is your developer"],
+    "response": "I was built for the Hollow Fall website to help visitors explore the game's knowledge base."
+  },
   "help": {
-    "patterns": ["help", "what can you do", "what can i ask", "how can you help"],
+    "patterns": ["help", "what can you do", "what can i ask", "how can you help", "commands", "topics"],
     "response": "You can ask me about Hollow Fall's story, characters, enemies, gameplay features, release roadmap, platforms, pricing, system requirements, and support."
+  },
+  "capability_limit": {
+    "patterns": ["can you answer anything", "can you talk about anything", "do you know everything", "can you help with homework", "can you code", "can you write code"],
+    "response": "I mainly answer Hollow Fall questions. Ask about the game's story, characters, enemies, release, platforms, price, or support."
+  },
+  "unknown_smalltalk": {
+    "patterns": ["lol", "haha", "hahaha", "lmao", "huh", "what", "why", "really", "seriously"],
+    "response": "I hear you. For the best answer, ask me a Hollow Fall question."
   }
 }

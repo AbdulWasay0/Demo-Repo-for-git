@@ -145,14 +145,15 @@ def retrieve_chroma_context(question: str, limit: int = 4) -> str:
 
 
 def normalize_message(message: str) -> str:
-    return re.sub(r"[^a-z0-9\s']", " ", message.lower()).strip()
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9\s']", " ", message.lower())).strip()
 
 
 def match_intent(message: str) -> str:
     normalized = normalize_message(message)
     for intent in INTENTS.values():
         for pattern in intent.get("patterns", []):
-            if normalized == normalize_message(pattern):
+            normalized_pattern = normalize_message(pattern)
+            if normalized == normalized_pattern:
                 return intent.get("response", "")
     return ""
 
