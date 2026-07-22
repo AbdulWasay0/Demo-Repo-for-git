@@ -15,7 +15,7 @@ from pydantic import BaseModel
 APP_DIR = Path(__file__).resolve().parent
 load_dotenv(APP_DIR / ".env")
 KNOWLEDGE_PATH = APP_DIR / "knowledge_base" / "hollowfall.txt"
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
+OLLAMA_URL = os.getenv("OLLAMA_URL", "")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:3b")
 CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION", "hollowfall_knowledge")
 EMBEDDING_SIZE = 384
@@ -136,6 +136,9 @@ def retrieve_chroma_context(question: str, limit: int = 4) -> str:
 
 
 def ask_ollama(question: str, context: str) -> str:
+    if not OLLAMA_URL:
+        raise requests.RequestException("OLLAMA_URL is not configured.")
+
     prompt = f"""You are the official assistant for the HOLLOWFALL website.
 
 Rules:
@@ -172,6 +175,8 @@ def health() -> dict:
         "ok": True,
         "local_chunks": len(CHUNKS),
         "chroma_enabled": get_chroma_collection() is not None,
+        "ollama_configured": bool(OLLAMA_URL),
+        "ollama_model": OLLAMA_MODEL,
     }
 
 
