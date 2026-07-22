@@ -165,6 +165,15 @@ def health() -> dict:
     }
 
 
+@app.get("/")
+def home() -> dict:
+    return {
+        "message": "Hollow Fall backend is running successfully.",
+        "docs": "/docs",
+        "health": "/health",
+    }
+
+
 @app.post("/chat", response_model=ChatResponse)
 def chat(payload: ChatRequest) -> ChatResponse:
     question = payload.message.strip()
