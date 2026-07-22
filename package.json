@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix \"Hollow Fall\" run build",
+    "dev": "npm --prefix \"Hollow Fall\" run dev",
+    "preview": "npm --prefix \"Hollow Fall\" run preview"
+  }
+}
