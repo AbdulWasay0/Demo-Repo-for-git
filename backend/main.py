@@ -1,5 +1,6 @@
 from pathlib import Path
 from typing import List
+import json
 import os
 import re
 import hashlib
@@ -15,6 +16,7 @@ from pydantic import BaseModel
 APP_DIR = Path(__file__).resolve().parent
 load_dotenv(APP_DIR / ".env")
 KNOWLEDGE_PATH = APP_DIR / "knowledge_base" / "hollowfall.txt"
+INTENTS_PATH = APP_DIR / "knowledge_base" / "chatbot_intents.json"
 OLLAMA_URL = os.getenv("OLLAMA_URL", "")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2:3b")
 CHROMA_COLLECTION = os.getenv("CHROMA_COLLECTION", "hollowfall_knowledge")
@@ -55,7 +57,14 @@ def load_chunks() -> List[str]:
     return [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
 
 
+def load_intents() -> dict:
+    if not INTENTS_PATH.exists():
+        return {}
+    return json.loads(INTENTS_PATH.read_text(encoding="utf-8"))
+
+
 CHUNKS = load_chunks()
+INTENTS = load_intents()
 CHROMA_COLLECTION_CLIENT = None
 
 
@@ -135,6 +144,19 @@ def retrieve_chroma_context(question: str, limit: int = 4) -> str:
         return ""
 
 
+def normalize_message(message: str) -> str:
+    return re.sub(r"[^a-z0-9\s']", " ", message.lower()).strip()
+
+
+def match_intent(message: str) -> str:
+    normalized = normalize_message(message)
+    for intent in INTENTS.values():
+        for pattern in intent.get("patterns", []):
+            if normalized == normalize_message(pattern):
+                return intent.get("response", "")
+    return ""
+
+
 def ask_ollama(question: str, context: str) -> str:
     if not OLLAMA_URL:
         raise requests.RequestException("OLLAMA_URL is not configured.")
@@ -174,6 +196,7 @@ def health() -> dict:
     return {
         "ok": True,
         "local_chunks": len(CHUNKS),
+        "intent_count": len(INTENTS),
         "chroma_enabled": get_chroma_collection() is not None,
         "ollama_configured": bool(OLLAMA_URL),
         "ollama_model": OLLAMA_MODEL,
@@ -194,6 +217,10 @@ def chat(payload: ChatRequest) -> ChatResponse:
     question = payload.message.strip()
     if not question:
         return ChatResponse(answer="Ask me something about Hollow Fall.", source="local")
+
+    intent_answer = match_intent(question)
+    if intent_answer:
+        return ChatResponse(answer=intent_answer, source="intent")
 
     context = retrieve_context(question)
     if not context:
