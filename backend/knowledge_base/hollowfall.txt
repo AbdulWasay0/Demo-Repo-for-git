@@ -1,0 +1,67 @@
+HOLLOWFALL is a cinematic psychological survival horror game from Ashen Veil Studios.
+Its tagline is "Fear Has A New Home."
+
+Story:
+Twenty years after the disappearance of her sister, journalist Aria Vale returns to Hollowfall, a fog-swallowed town the world tried to erase. She finds a place where memory bleeds, the dead still whisper, and every locked door hides a version of herself she does not remember becoming.
+HOLLOWFALL is built on dread, silence, unreliable memory, and the terrible weight of what the player already knows.
+
+Characters:
+Aria Vale is the journalist. She returns to a town she swore she would never see again.
+Father Kaine is the keeper. He knows what happened, but he will not say.
+Little Wren is the echo, a child who should not exist and yet does.
+
+Enemies:
+The Wailer has a high threat level. It hunts by sound and cannot cross salt.
+The Warden has an extreme threat level. It patrols corridors and is blind in bright light.
+
+Features:
+HOLLOWFALL includes psychological horror, dynamic AI enemies, four endings, realistic lighting, immersive binaural audio, environmental storytelling, occult puzzles and rituals, stealth and survival gameplay, and photo mode.
+Enemies learn player habits and hunt accordingly.
+Combat is a last resort. Players must hide, run, and ration supplies.
+
+Game details:
+The age rating is 16+.
+The campaign length is about 12 hours.
+There are four endings.
+The game is single-player.
+Jump scares are used sparingly. The game focuses on atmospheric dread rather than constant startles.
+
+Trailer:
+The official reveal trailer is called "HOLLOWFALL - Reveal."
+
+Roadmap:
+The prototype was in 2023.
+The alpha was in 2024.
+The public demo was in 2025.
+Early Access is planned for Q2 2026.
+Full release is planned for Q4 2026.
+Post-release content is planned for 2027, including New Game+, DLC called "The Chapel", and free content drops.
+
+Platforms and release:
+HOLLOWFALL is coming to PC through Steam first.
+PlayStation 5 and Xbox Series X/S versions are planned shortly after the PC launch.
+The demo will remain free forever.
+The planned launch price is $29.99 USD.
+The game will support 12 languages.
+The game has full controller support with custom rebinding, including haptics on PlayStation 5.
+
+System requirements:
+Minimum requirements are Windows 10 64-bit, Intel i5-8400 or Ryzen 5 2600 CPU, 12 GB RAM, GTX 1660 or RX 5600 GPU, and 70 GB SSD storage.
+Recommended requirements are Windows 11 64-bit, Intel i7-12700 or Ryzen 7 5800X CPU, 16 GB RAM, RTX 3070 or RX 6800 GPU, and 70 GB NVMe storage.
+
+Community:
+Players can join the community on Discord, Reddit, Twitter, Instagram, TikTok, and YouTube.
+Players can subscribe by email for updates.
+
+Contact:
+Press inquiries go to press@ashenveil.studio.
+Business inquiries go to contact@ashenveil.studio.
+Support inquiries go to help@ashenveil.studio.
+
+FAQ:
+Full release is planned for Q4 2026, with Early Access in Q2 2026.
+The game launches on PC Steam first, followed by PlayStation 5 and Xbox Series X/S.
+HOLLOWFALL has full controller support.
+HOLLOWFALL does not have multiplayer or co-op.
+The game costs $29.99 USD at launch.
+The demo is free.
