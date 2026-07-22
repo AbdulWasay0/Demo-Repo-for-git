@@ -4,6 +4,7 @@ import json
 import os
 import re
 import hashlib
+from difflib import SequenceMatcher
 
 import chromadb
 import requests
@@ -154,6 +155,8 @@ def match_intent(message: str) -> str:
         for pattern in intent.get("patterns", []):
             normalized_pattern = normalize_message(pattern)
             if normalized == normalized_pattern:
+                return intent.get("response", "")
+            if len(normalized) >= 4 and SequenceMatcher(None, normalized, normalized_pattern).ratio() >= 0.84:
                 return intent.get("response", "")
     return ""
 
