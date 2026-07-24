@@ -1,8 +1,10 @@
 {
+  "name": "hollowfall-monorepo",
   "private": true,
   "scripts": {
-    "build": "npm --prefix \"Hollow Fall\" run build && node scripts/copy-vercel-output.mjs",
-    "dev": "npm --prefix \"Hollow Fall\" run dev",
-    "preview": "npm --prefix \"Hollow Fall\" run preview"
+    "build": "npm --prefix frontend run build && node scripts/copy-vercel-output.mjs",
+    "dev": "npm --prefix frontend run dev",
+    "preview": "npm --prefix frontend run preview",
+    "start:dev": "powershell -ExecutionPolicy Bypass -File scripts/start-dev.ps1"
   }
 }

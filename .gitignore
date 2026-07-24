@@ -3,3 +3,8 @@
 backend/.env
 __pycache__/
 *.pyc
+.vercel/
+frontend/.vercel/
+frontend/node_modules/
+frontend/.output/
+frontend/.wrangler/

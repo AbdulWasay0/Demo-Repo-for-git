@@ -7,7 +7,7 @@ OLLAMA_URL = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 MODEL_NAME = os.getenv("OLLAMA_MODEL", "qwen2.5:1.5b")
 
 
-def chat_with_gpt(prompt):
+def chat_with_ollama(prompt):
     payload = {
         "model": MODEL_NAME,
         "prompt": prompt,
@@ -38,5 +38,5 @@ if __name__ == "__main__":
         if user_input.lower() in ["quit", "exit", "bye"]:
             break
 
-        answer = chat_with_gpt(user_input)
+        answer = chat_with_ollama(user_input)
         print("\nChatbot:", answer)

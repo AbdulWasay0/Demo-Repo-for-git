@@ -10,10 +10,10 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Optional, for AI answers:
+Optional, for local Ollama answers:
 
 ```bash
-ollama pull llama3.1
+ollama pull qwen2.5:1.5b
 ollama serve
 ```
 

@@ -1,8 +1,8 @@
 $ErrorActionPreference = "Stop"
 
-$root = Split-Path -Parent $MyInvocation.MyCommand.Path
+$root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $backend = Join-Path $root "backend"
-$frontend = Join-Path $root "Hollow Fall"
+$frontend = Join-Path $root "frontend"
 
 function Test-Port($port) {
   $connection = Get-NetTCPConnection -LocalPort $port -ErrorAction SilentlyContinue | Select-Object -First 1
